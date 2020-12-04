@@ -1,14 +1,18 @@
+module.exports=dload
+
+
 const axios = require("axios").default;
 var unzipper = require("unzipper");
 const fs = require("fs");
 const request = require("request");
 const Path = require("path");
 
-fs.access("./data", (err) => {
+function dload(year="2020",months=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]){
+  fs.access("./data", (err) => {
   if (!err) {
     console.error("Data folder exists , downloading");
   } else {
-    fs.mkdir(Path.join(__dirname, "data"), (err) => {
+    fs.mkdir("./data", (err) => {
       if (err) {
         return console.error(err);
       }
@@ -16,13 +20,7 @@ fs.access("./data", (err) => {
     });
   }
 });
-(function dload() {
   let i = 1;
-  let year = "2020";
-  let months = [
-    "JAN",
-
-  ];
   while (months.length > 0) {
     let mon = months.pop();
 
@@ -59,9 +57,7 @@ fs.access("./data", (err) => {
     }
     i = 0;
   }
-})();
-
-function loader(urly) {
+  function loader(urly) {
   axios({
     method: "get",
     url: urly,
@@ -76,3 +72,6 @@ function loader(urly) {
       //you can check if any data is skipped except holidays
     });
 }
+}
+
+
