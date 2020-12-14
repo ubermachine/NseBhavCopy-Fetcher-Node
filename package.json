@@ -1,17 +1,33 @@
 {
-  "name": "Bhavcopy-downloader",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app6.js",
+  "name": "bhavcopy-downloader",
+  "version": "1.0.3",
+  "description": "Simple app to download bhavcopy data from nse and unzip it",
+  "main": "index.js",
   "scripts": {
-    "start": "node Fetcher.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ubermachine/NseBhavCopy-Fetcher-Node.git"
+  },
+  "keywords": [
+    "bhavcopy",
+    "nse",
+    "bhavcopy",
+    "downloader",
+    "EOD data",
+    "Indian Stock eod",
+    "India stock"
+  ],
+  "author": "ubermachine",
   "license": "MIT",
-  "dependencies": {
+    "dependencies": {
     "axios": "^0.19.2",
-    "bhavcopy-downloader": "file:bhavcopy-downloader",
     "request": "^2.88.2",
     "unzipper": "^0.10.11"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/ubermachine/NseBhavCopy-Fetcher-Node/issues"
+  },
+  "homepage": "https://github.com/ubermachine/NseBhavCopy-Fetcher-Node#readme"
 }
