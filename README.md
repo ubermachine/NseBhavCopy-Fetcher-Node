@@ -14,7 +14,7 @@
      bhav("YEAR",[Array OF MONTHS with FIRST three letters])
      //Default param are  year="2020",months=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
        
-  
+**Data will be save in data folder**  
 ***Example-***  
 To download all data for year 2020  
 

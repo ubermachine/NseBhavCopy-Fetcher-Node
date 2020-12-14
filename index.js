@@ -2,10 +2,9 @@
 const axios = require("axios").default;
 var unzipper = require("unzipper");
 const fs = require("fs");
-const request = require("request");
 const Path = require("path");
 
-function dload(year="2020",months=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]){
+async function dload(year="2020",months=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]){
   fs.access("./data", (err) => {
   if (!err) {
     console.error("Data folder exists , downloading");
@@ -34,7 +33,7 @@ function dload(year="2020",months=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AU
           mon +
           year +
           "bhav.csv.zip";
-        loader(url);
+        await loader(url);
 
         i++;
       } else {
@@ -49,7 +48,7 @@ function dload(year="2020",months=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AU
           year +
           "bhav.csv.zip";
 
-        loader(url);
+        await loader(url);
         i++;
       }
     }
