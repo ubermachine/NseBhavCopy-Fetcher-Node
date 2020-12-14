@@ -1,5 +1,3 @@
-module.exports=dload
-
 
 const axios = require("axios").default;
 var unzipper = require("unzipper");
@@ -73,5 +71,8 @@ function dload(year="2020",months=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AU
     });
 }
 }
+module.exports=dload
+
+
 
 
