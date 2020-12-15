@@ -5,6 +5,8 @@
      npm i bhavcopy-downloader
 
  
+ ****Update:Added small wait to make this process less demanding for the server****  
+ 
  **Usage**:
  
      const bhav = require('bhavcopy-downloader');
@@ -14,7 +16,8 @@
      bhav("YEAR",[Array OF MONTHS with FIRST three letters])
      //Default param are  year="2020",months=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"]
        
-**Data will be save in data folder**  
+***Data will be saved in data folder***  
+
 ***Example-***  
 To download all data for year 2020  
 
