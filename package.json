@@ -1,6 +1,6 @@
 {
   "name": "bhavcopy-downloader",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Simple app to download bhavcopy data from nse and unzip it",
   "main": "index.js",
   "scripts": {

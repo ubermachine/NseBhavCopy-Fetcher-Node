@@ -3,7 +3,7 @@ var unzipper = require("unzipper");
 const fs = require("fs");
 const Path = require("path");
 
-let wait = 200;
+let wait = 100;
 
 const timer = (ms) => {
   new Promise((res) => setTimeout(res, ms));
@@ -28,13 +28,13 @@ async function dload(
 ) {
   fs.access("./data", (err) => {
     if (!err) {
-      console.error("Data folder exists , downloading!");
+      console.error("Data folder exists , downloading! max wait time 38.4 seconds");
     } else {
       fs.mkdir("./data", (err) => {
         if (err) {
           return console.error(err);
         }
-        console.log("Directory created successfully, downloading!");
+        console.log("Directory created successfully, downloading! max wait time 38.4 seconds");
       });
     }
   });
