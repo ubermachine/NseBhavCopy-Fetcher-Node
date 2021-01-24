@@ -1,10 +1,10 @@
 const axios = require("axios").default;
 var unzipper = require("unzipper");
 const fs = require("fs");
-const Path = require("path");
+const path = require("path");
 
 let wait = 100;
-
+let dest = path.resolve("./data");
 const timer = (ms) => {
   new Promise((res) => setTimeout(res, ms));
 };
@@ -26,15 +26,19 @@ async function dload(
     "DEC",
   ]
 ) {
-  fs.access("./data", (err) => {
+  fs.access(dest, (err) => {
     if (!err) {
-      console.error("Data folder exists , downloading! max wait time 38.4 seconds");
+      console.error(
+        "Data folder exists , downloading! max wait time 38.4 seconds"
+      );
     } else {
-      fs.mkdir("./data", (err) => {
+      fs.mkdir(dest, (err) => {
         if (err) {
           return console.error(err);
         }
-        console.log("Directory created successfully, downloading! max wait time 38.4 seconds");
+        console.log(
+          "Directory created successfully, downloading! max wait time 38.4 seconds"
+        );
       });
     }
   });
@@ -84,7 +88,7 @@ async function dload(
       responseType: "stream",
     })
       .then(function (response) {
-        response.data.pipe(unzipper.Extract({ path: "./data/" }));
+        response.data.pipe(unzipper.Extract({ path: dest }));
         //if need them zipped
         // response.data.pipe(fs.createWriteStream("./data/" + urly.slice(-21)));
       })
